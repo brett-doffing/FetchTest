@@ -5,7 +5,7 @@ import SwiftUI
 @main
 struct FetchTestApp: App {
     let dummyCategory = Category(
-        idCategory: "1",
+        idCategory: "",
         strCategory: "Dessert",
         strCategoryThumb: "",
         strCategoryDescription: ""
