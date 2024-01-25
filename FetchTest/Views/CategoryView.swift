@@ -1,6 +1,7 @@
 // CategoryView.swift
 
 import SwiftUI
+import CachedAsyncImage
 
 struct CategoryView: View {
     @StateObject var viewModel = CategoryViewModel()
@@ -25,7 +26,7 @@ struct CategoryView: View {
     }
 
     private func thumbnail(for imageURL: String) -> some View {
-        AsyncImage(url: URL(string: imageURL)) { image in
+        CachedAsyncImage(url: URL(string: imageURL)) { image in
             image
                 .resizable()
                 .scaledToFill()
