@@ -5,6 +5,7 @@ import SwiftUI
 struct MealView: View {
     @StateObject var viewModel = MealViewModel()
     let mealId: String
+    let padding: CGFloat = 10
 
     var body: some View {
         mealView
@@ -20,16 +21,16 @@ struct MealView: View {
                 VStack(alignment: .leading) {
                     Text(meal.strMeal)
                         .font(.title)
-                        .padding(.bottom, 8)
+                        .padding(.bottom, padding)
                     Text("Instructions:")
                         .font(.headline)
                         .foregroundColor(.secondary)
                     Text(meal.strInstructions)
-                        .padding(.top, 8)
+                        .padding(.top, padding)
                     Text("Ingredients:")
                         .font(.headline)
                         .foregroundColor(.secondary)
-                        .padding(.vertical, 8)
+                        .padding(.vertical, padding)
                     ForEach(0..<meal.ingredients.count, id: \.self) { i in
                         HStack {
                             Text(meal.ingredients[i])
@@ -38,7 +39,7 @@ struct MealView: View {
                         }
                     }
                 }
-                .padding(10)
+                .padding(padding)
             }
         }
         .navigationBarTitleDisplayMode(.inline)
