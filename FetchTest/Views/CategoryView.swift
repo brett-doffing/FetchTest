@@ -26,17 +26,10 @@ struct CategoryView: View {
     }
 
     private func thumbnail(for imageURL: String) -> some View {
-        CachedAsyncImage(url: URL(string: imageURL)) { image in
-            image
-                .resizable()
-                .scaledToFill()
-                .aspectRatio(1, contentMode: .fill)
-        } placeholder: {
-            Image(systemName: "photo.fill")
-                .foregroundColor(.gray)
-                .imageScale(.large)
-        }
-        .frame(width: 75, height: 75)
+        URLImage(url: URL(string: imageURL))
+            .scaledToFill()
+            .aspectRatio(1, contentMode: .fit)
+            .frame(width: 75, height: 75)
     }
 }
 
