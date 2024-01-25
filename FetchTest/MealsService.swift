@@ -18,10 +18,7 @@ struct MealsService: MealsServiceable {
     */
     func fetchMeals(for category: Category) async throws -> CategoryMealsResponse {
         let url = try url(for: Endpoint.filter, query: category.strCategory)
-        let response = try await request(with: url, type: CategoryMealsResponse.self)
-        // NOTE: Sorting, as per request to do so, although the response is already sorted.
-        // It may happen that the API changes.
-        let sortedMeals = response.meals.sorted { $0.strMeal < $1.strMeal }
+        let response = try await request(with: url, type: CategoryMealsResponse.self)        let sortedMeals = response.meals.sorted { $0.strMeal < $1.strMeal }
         return CategoryMealsResponse(meals: sortedMeals)
     }
 
