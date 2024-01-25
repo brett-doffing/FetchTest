@@ -46,7 +46,7 @@ struct MealsService: MealsServiceable {
     private func request<T: Decodable>(with url: URL, type: T.Type) async throws -> T {
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
-            guard let response = response as? HTTPURLResponse else { throw NetworkError.InvalidHTTPURLResponse }
+            guard let response = response as? HTTPURLResponse else { throw NetworkError.invalidHTTPURLResponse }
             if !(response.statusCode >= 200 && response.statusCode < 300) {
                 throw NetworkError.invalidStatusCode(statusCode: response.statusCode)
             }
@@ -93,27 +93,6 @@ extension MealsService {
                 return "c"
             case .lookup:
                 return "i"
-            }
-        }
-    }
-    
-    /// The errors for the API
-    enum NetworkError: Error {
-        case invalidURL
-        case InvalidHTTPURLResponse
-        case invalidStatusCode(statusCode: Int)
-        case failedToDecode(error: Error)
-
-        var localizedDescription: String {
-            switch self {
-            case .invalidURL:
-                return "Invalid URL"
-            case .InvalidHTTPURLResponse:
-                return "Invalid HTTPURLResponse"
-            case .invalidStatusCode(let statusCode):
-                return "Invalid Status Code: \(statusCode)"
-            case .failedToDecode(let error):
-                return "Failed to Decode: \(error.localizedDescription)"
             }
         }
     }
