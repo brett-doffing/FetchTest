@@ -44,6 +44,7 @@ struct MealView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 
+    /// Creates a thumbnail for a given image URL or returns an empty view
     private func thumbnail(for imageURL: String) -> some View {
         AsyncImage(url: URL(string: imageURL)) { image in
             image

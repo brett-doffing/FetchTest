@@ -3,7 +3,10 @@
 import SwiftUI
 
 struct URLImage: View {
+    /// The image loader
     @StateObject private var imageLoader = ImageLoader()
+    
+    /// The URL to fetch the image from
     let url: URL?
 
     var body: some View {
@@ -20,6 +23,7 @@ struct URLImage: View {
         }
     }
 
+    /// Downloads an image from a given URL
     private func downloadImage() async {
         do {
             try await imageLoader.fetchImage(url: url)

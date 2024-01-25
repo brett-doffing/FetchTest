@@ -17,6 +17,9 @@ struct FullMeal: Decodable, Hashable {
     var ingredients: [String]
     var measurements: [String]
 
+    /// Creates a new instance by decoding from the given decoder.
+    /// - Parameter decoder: The decoder to read data from.
+    /// - Throws: An error if reading from the decoder fails, or if the data read is corrupted or otherwise invalid.
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.idMeal = try container.decode(String.self, forKey: .id)

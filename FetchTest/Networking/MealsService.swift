@@ -8,14 +8,13 @@ protocol MealsServiceable{
 }
 
 struct MealsService: MealsServiceable {
+    /// The base URL for the API
     private let baseURL = "https://themealdb.com"
 
-    /**
-    Fetches all meals for a category
-    - Parameters:
-      - category: The category to fetch meals for
-    - Returns: An array of meals
-    */
+    /// Fetches meals for a given category
+    /// - Parameter category: The category to fetch meals for
+    /// - Throws: An error if the request fails
+    /// - Returns: A response containing an array of meals
     func fetchMeals(for category: Category) async throws -> CategoryMealsResponse {
         let url = try url(for: Endpoint.filter, query: category.strCategory)
         let response = try await request(with: url, type: CategoryMealsResponse.self)
@@ -23,26 +22,22 @@ struct MealsService: MealsServiceable {
         return CategoryMealsResponse(meals: sortedMeals)
     }
 
-    /**
-    Fetches a meal with a given id
-    - Parameters:
-      - id: The id of the meal to fetch
-    - Returns: A meal
-    - Note: The response returns an array of meals, but we only want one
-    */
+    /// Fetches a meal for a given id
+    /// - Parameter id: The id of the meal to fetch
+    /// - Throws: An error if the request fails
+    /// - Returns: A meal
     func fetchMeal(with id: String) async throws -> FullMeal? {
         let url = try url(for: Endpoint.lookup, query: id)
         let response = try await request(with: url, type: FullMealsResponse.self)
         return response.meals.first
     }
 
-    /**
-    Generic request function
-    - Parameters:
-      - urlString: The URL to request
-      - type: The type to decode the response to
-    - Returns: The decoded response
-    */
+    /// Performs a network request
+    /// - Parameters:
+    ///   - url: The URL to request
+    ///   - type: The type to decode the response to
+    /// - Throws: An error if the request fails
+    /// - Returns: A decoded response
     private func request<T: Decodable>(with url: URL, type: T.Type) async throws -> T {
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
@@ -58,13 +53,12 @@ struct MealsService: MealsServiceable {
         }
     }
 
-    /**
-    Creates a URL for a given endpoint and query
-    - Parameters:
-      - endpoint: The endpoint to create the URL for
-      - query: The query to add to the URL
-    - Returns: A URL
-    */
+    /// Creates a URL for a given endpoint and query
+    /// - Parameters:
+    ///   - endpoint: The endpoint to create the URL for
+    ///   - query: The query to add to the URL
+    /// - Throws: An error if the URL cannot be created
+    /// - Returns: A URL
     private func url(for endpoint: Endpoint, query: String) throws -> URL {
         var components = URLComponents(string: baseURL)
         components?.path = endpoint.path

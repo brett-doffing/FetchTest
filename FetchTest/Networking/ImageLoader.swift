@@ -4,9 +4,14 @@ import UIKit
 
 @MainActor class ImageLoader: ObservableObject {
 
+    /// The image to display
     @Published var uiImage: UIImage?
+    
+    /// The image cache
     private static let cache = NSCache<NSString, UIImage>()
 
+    /// Fetches an image from a given URL and caches it
+    /// - Parameter url: The URL to fetch the image from
     func fetchImage(url: URL?) async throws {
         guard let url = url else { throw NetworkError.invalidURL }
 

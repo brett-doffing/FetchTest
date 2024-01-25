@@ -2,7 +2,7 @@
 
 import Foundation
 
-/// The errors for the API
+/// An error that occurs during a network request
 enum NetworkError: Error {
     case invalidURL
     case invalidHTTPURLResponse

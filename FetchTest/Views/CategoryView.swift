@@ -25,6 +25,7 @@ struct CategoryView: View {
         }
     }
 
+    /// Creates a thumbnail for a given image URL
     private func thumbnail(for imageURL: String) -> some View {
         URLImage(url: URL(string: imageURL))
             .scaledToFill()
