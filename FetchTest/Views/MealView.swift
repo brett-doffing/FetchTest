@@ -8,10 +8,21 @@ struct MealView: View {
 
     var body: some View {
         mealView
-            .navigationBarTitleDisplayMode(.inline)
-            .task {
-                await viewModel.fetchMeal(with: mealId)
-            }
+        .navigationBarTitleDisplayMode(.inline)
+        .task {
+            await viewModel.fetchMeal(with: mealId)
+        }
+        .overlay {
+            if viewModel.isLoading { ProgressView().scaleEffect(2) }
+        }
+        .alert("Error", isPresented: $viewModel.showAlert) {
+            Button("ok", role: .cancel, action: {
+                viewModel.error = nil
+            })
+        } message: {
+            Text("Apologies, but it looks like something went wrong.")
+            Text(viewModel.error?.localizedDescription ?? "")
+        }
     }
 
     /// Creates a view for the meal

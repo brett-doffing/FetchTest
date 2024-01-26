@@ -11,6 +11,9 @@ import Foundation
 
     /// An error that occurs during the request
     @Published var error: Error?
+
+    /// Whether or not to show the alert for the error
+    @Published var showAlert: Bool = false
     
     /// The meals service
     private let service: MealsServiceable
@@ -28,6 +31,7 @@ import Foundation
             meals = response.meals
         } catch {
             self.error = error
+            self.showAlert = true
         }
         isLoading = false
     }
