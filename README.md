@@ -1,6 +1,6 @@
 # Fetch Test
 
-### A minimal implementation iOS app that utilizes [https://themealdb.com](themealdb.com's) API.
+### A minimal implementation iOS app that utilizes [themealdb.com's](https://themealdb.com) API.
 
 ## Features:
 - A list of meals from the "Dessert" category
