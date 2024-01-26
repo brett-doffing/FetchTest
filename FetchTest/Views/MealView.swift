@@ -13,15 +13,15 @@ struct MealView: View {
             await viewModel.fetchMeal(with: mealId)
         }
         .overlay {
-            if viewModel.isLoading { ProgressView().scaleEffect(1.5) }
+            if viewModel.isLoading { ProgressView().scaleEffect(Constants.scaleSize) }
         }
-        .alert("Error", isPresented: $viewModel.showAlert) {
-            Button("OK", role: .cancel, action: {
+        .alert(Constants.alertTitle, isPresented: $viewModel.showAlert) {
+            Button(Constants.alertButtonTitle, role: .cancel, action: {
                 viewModel.error = nil
             })
         } message: {
             VStack {
-                Text($viewModel.error.wrappedValue?.localizedDescription ?? "")
+                Text($viewModel.error.wrappedValue?.localizedDescription ?? Constants.alertDefaultDescription)
             }
         }
     }
@@ -51,7 +51,7 @@ struct MealView: View {
                 .resizable()
                 .scaledToFill()
                 .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: .infinity, maxHeight: 200)
+                .frame(maxWidth: .infinity, maxHeight: Constants.maxHeight)
                 .clipped()
         } placeholder: {
             EmptyView()
@@ -68,7 +68,7 @@ struct MealView: View {
             Text(text)
                 .padding()
                 .background {
-                    RoundedRectangle(cornerRadius: 20)
+                    RoundedRectangle(cornerRadius: Constants.twenty)
                         .stroke()
                 }
         }
@@ -92,9 +92,19 @@ struct MealView: View {
             }
             .padding()
             .background {
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: Constants.ten)
                     .stroke()
             }
         }
+    }
+
+    private struct Constants {
+        static let alertButtonTitle = "OK"
+        static let alertTitle = "Error"
+        static let alertDefaultDescription = "Apologies, but something went wrong."
+        static let maxHeight: CGFloat = 200
+        static let ten: CGFloat = 10
+        static let twenty: CGFloat = 20
+        static let scaleSize: CGFloat = 2
     }
 }

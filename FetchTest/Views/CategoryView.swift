@@ -16,15 +16,15 @@ struct CategoryView: View {
             }
         }
         .overlay {
-            if viewModel.isLoading { ProgressView().scaleEffect(2) }
+            if viewModel.isLoading { ProgressView().scaleEffect(Constants.scaleSize) }
         }
-        .alert("Error", isPresented: $viewModel.showAlert) {
-            Button("OK", role: .cancel, action: {
+        .alert(Constants.alertTitle, isPresented: $viewModel.showAlert) {
+            Button(Constants.alertButtonTitle, role: .cancel, action: {
                 viewModel.error = nil
             })
         } message: {
             VStack {
-                Text($viewModel.error.wrappedValue?.localizedDescription ?? "")
+                Text($viewModel.error.wrappedValue?.localizedDescription ?? Constants.alertDefaultDescription)
             }
         }
     }
@@ -38,7 +38,12 @@ struct CategoryView: View {
                     Text(meal.strMeal)
                 }
             }
-            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
+            .listRowInsets(EdgeInsets(
+                top: Constants.zero,
+                leading: Constants.zero,
+                bottom: Constants.zero,
+                trailing: Constants.ten)
+            )
         }
     }
 
@@ -46,8 +51,19 @@ struct CategoryView: View {
     private func thumbnail(for imageURL: String) -> some View {
         URLImage(url: URL(string: imageURL))
             .scaledToFill()
-            .aspectRatio(1, contentMode: .fit)
-            .frame(width: 75, height: 75)
+            .aspectRatio(Constants.aspectRatio, contentMode: .fit)
+            .frame(width: Constants.thumbnailDimension, height: Constants.thumbnailDimension)
+    }
+
+    private struct Constants {
+        static let alertButtonTitle = "OK"
+        static let alertTitle = "Error"
+        static let alertDefaultDescription = "Apologies, but something went wrong."
+        static let thumbnailDimension: CGFloat = 75
+        static let aspectRatio: CGFloat = 1
+        static let zero: CGFloat = 0
+        static let ten: CGFloat = 10
+        static let scaleSize: CGFloat = 2
     }
 }
 
