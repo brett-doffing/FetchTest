@@ -8,11 +8,13 @@ struct MealView: View {
 
     var body: some View {
         mealView
+            .navigationBarTitleDisplayMode(.inline)
             .task {
                 await viewModel.fetchMeal(with: mealId)
             }
     }
 
+    /// Creates a view for the meal
     private var mealView: some View {
         ScrollView {
             if let meal = viewModel.meal {
@@ -28,7 +30,6 @@ struct MealView: View {
                 .padding()
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
     }
 
     /// Creates a banner for a given image URL or returns an empty view
