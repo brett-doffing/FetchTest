@@ -17,13 +17,14 @@
 		BCFCA4182B61E3CD00F27F00 /* FullMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA4172B61E3CD00F27F00 /* FullMeal.swift */; };
 		BCFCA41A2B61E67C00F27F00 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA4192B61E67C00F27F00 /* CategoryViewModel.swift */; };
 		BCFCA41C2B61E69500F27F00 /* MealsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA41B2B61E69500F27F00 /* MealsService.swift */; };
-		BCFCA41E2B61E93300F27F00 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA41D2B61E93300F27F00 /* Category.swift */; };
+		BCFCA41E2B61E93300F27F00 /* MealCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA41D2B61E93300F27F00 /* MealCategory.swift */; };
 		BCFCA4202B61F1B900F27F00 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA41F2B61F1B900F27F00 /* MealView.swift */; };
-		BCFCA4222B61F6B100F27F00 /* CategoryMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA4212B61F6B100F27F00 /* CategoryMeal.swift */; };
+		BCFCA4222B61F6B100F27F00 /* PartialMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA4212B61F6B100F27F00 /* PartialMeal.swift */; };
 		BCFCA4242B620B9200F27F00 /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA4232B620B9200F27F00 /* MealViewModel.swift */; };
 		BCFCA42A2B62FB8400F27F00 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA4292B62FB8400F27F00 /* ImageLoader.swift */; };
 		BCFCA42D2B62FE5B00F27F00 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA42C2B62FE5B00F27F00 /* URLImage.swift */; };
 		BCFCA42F2B63009700F27F00 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA42E2B63009700F27F00 /* NetworkError.swift */; };
+		BCFCA4312B64061400F27F00 /* MockMealsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA4302B64061400F27F00 /* MockMealsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,13 +58,14 @@
 		BCFCA4172B61E3CD00F27F00 /* FullMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMeal.swift; sourceTree = "<group>"; };
 		BCFCA4192B61E67C00F27F00 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		BCFCA41B2B61E69500F27F00 /* MealsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsService.swift; sourceTree = "<group>"; };
-		BCFCA41D2B61E93300F27F00 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		BCFCA41D2B61E93300F27F00 /* MealCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCategory.swift; sourceTree = "<group>"; };
 		BCFCA41F2B61F1B900F27F00 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
-		BCFCA4212B61F6B100F27F00 /* CategoryMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMeal.swift; sourceTree = "<group>"; };
+		BCFCA4212B61F6B100F27F00 /* PartialMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialMeal.swift; sourceTree = "<group>"; };
 		BCFCA4232B620B9200F27F00 /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
 		BCFCA4292B62FB8400F27F00 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		BCFCA42C2B62FE5B00F27F00 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		BCFCA42E2B63009700F27F00 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		BCFCA4302B64061400F27F00 /* MockMealsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMealsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				BCFCA3FA2B61D40900F27F00 /* FetchTestTests.swift */,
+				BCFCA4302B64061400F27F00 /* MockMealsService.swift */,
 			);
 			path = FetchTestTests;
 			sourceTree = "<group>";
@@ -155,8 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				BCFCA4172B61E3CD00F27F00 /* FullMeal.swift */,
-				BCFCA41D2B61E93300F27F00 /* Category.swift */,
-				BCFCA4212B61F6B100F27F00 /* CategoryMeal.swift */,
+				BCFCA41D2B61E93300F27F00 /* MealCategory.swift */,
+				BCFCA4212B61F6B100F27F00 /* PartialMeal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,13 +326,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCFCA41E2B61E93300F27F00 /* Category.swift in Sources */,
+				BCFCA41E2B61E93300F27F00 /* MealCategory.swift in Sources */,
 				BCFCA4242B620B9200F27F00 /* MealViewModel.swift in Sources */,
 				BCFCA42A2B62FB8400F27F00 /* ImageLoader.swift in Sources */,
 				BCFCA4182B61E3CD00F27F00 /* FullMeal.swift in Sources */,
 				BCFCA4202B61F1B900F27F00 /* MealView.swift in Sources */,
 				BCFCA3EA2B61D40600F27F00 /* FetchTestApp.swift in Sources */,
-				BCFCA4222B61F6B100F27F00 /* CategoryMeal.swift in Sources */,
+				BCFCA4222B61F6B100F27F00 /* PartialMeal.swift in Sources */,
 				BCFCA41A2B61E67C00F27F00 /* CategoryViewModel.swift in Sources */,
 				BCFCA41C2B61E69500F27F00 /* MealsService.swift in Sources */,
 				BCFCA42F2B63009700F27F00 /* NetworkError.swift in Sources */,
@@ -342,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCFCA4312B64061400F27F00 /* MockMealsService.swift in Sources */,
 				BCFCA3FB2B61D40900F27F00 /* FetchTestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

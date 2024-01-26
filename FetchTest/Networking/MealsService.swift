@@ -3,7 +3,7 @@
 import Foundation
 
 protocol MealsServiceable{
-    func fetchMeals(for category: Category) async throws -> CategoryMealsResponse
+    func fetchMeals(for category: MealCategory) async throws -> PartialMealsResponse
     func fetchMeal(with id: String) async throws -> FullMeal?
 }
 
@@ -15,11 +15,11 @@ struct MealsService: MealsServiceable {
     /// - Parameter category: The category to fetch meals for
     /// - Throws: An error if the request fails
     /// - Returns: A response containing an array of meals
-    func fetchMeals(for category: Category) async throws -> CategoryMealsResponse {
+    func fetchMeals(for category: MealCategory) async throws -> PartialMealsResponse {
         let url = try url(for: Endpoint.filter, query: category.strCategory)
-        let response = try await request(with: url, type: CategoryMealsResponse.self)
+        let response = try await request(with: url, type: PartialMealsResponse.self)
         let sortedMeals = response.meals.sorted { $0.strMeal < $1.strMeal }
-        return CategoryMealsResponse(meals: sortedMeals)
+        return PartialMealsResponse(meals: sortedMeals)
     }
 
     /// Fetches a meal for a given id

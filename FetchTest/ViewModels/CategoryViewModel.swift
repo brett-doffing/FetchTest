@@ -4,7 +4,7 @@ import Foundation
 
 @MainActor class CategoryViewModel: ObservableObject {
     /// The meals for the selected category
-    @Published var meals: [CategoryMeal] = []
+    @Published var meals: [PartialMeal] = []
 
     /// Whether or not the view is loading
     @Published var isLoading = false
@@ -21,7 +21,7 @@ import Foundation
     
     /// Fetches meals for a given category and either sets the meals or the error
     /// - Parameter category: The category to fetch meals for
-    func fetchMeals(for category: Category) async {
+    func fetchMeals(for category: MealCategory) async {
         isLoading = true
         do {
             let response = try await service.fetchMeals(for: category)

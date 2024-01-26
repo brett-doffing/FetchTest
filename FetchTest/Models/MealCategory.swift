@@ -2,7 +2,7 @@
 
 import Foundation
 
-struct Category {
+struct MealCategory {
     var idCategory: String
     var strCategory: String
     var strCategoryThumb: String

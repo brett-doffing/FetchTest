@@ -5,7 +5,7 @@ import CachedAsyncImage
 
 struct CategoryView: View {
     @StateObject var viewModel = CategoryViewModel()
-    var category: Category
+    var category: MealCategory
 
     var body: some View {
         NavigationView {
