@@ -28,7 +28,7 @@ import Foundation
         isLoading = true
         do {
             let response = try await service.fetchMeals(for: category)
-            meals = response.meals
+            meals = response
         } catch {
             self.error = error
             self.showAlert = true
