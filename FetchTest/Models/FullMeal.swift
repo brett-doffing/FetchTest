@@ -12,6 +12,7 @@ struct FullMeal: Decodable, Hashable {
     var strDrinkAlternate: String?
     var strCategory: String
     var strArea: String?
+    var strTags: String?
     var strInstructions: String
     var strMealThumb: String
     var ingredients: [String]
@@ -27,6 +28,7 @@ struct FullMeal: Decodable, Hashable {
         self.strDrinkAlternate = try container.decodeIfPresent(String.self, forKey: .drinkAlternate)
         self.strCategory = try container.decode(String.self, forKey: .category)
         self.strArea = try container.decodeIfPresent(String.self, forKey: .area)
+        self.strTags = try container.decodeIfPresent(String.self, forKey: .tags)
         self.strInstructions = try container.decode(String.self, forKey: .instructions)
         self.strMealThumb = try container.decode(String.self, forKey: .imageURLString)
 
@@ -56,6 +58,7 @@ struct FullMeal: Decodable, Hashable {
         case drinkAlternate = "strDrinkAlternate"
         case category = "strCategory"
         case area = "strArea"
+        case tags = "strTags"
         case instructions = "strInstructions"
         case imageURLString = "strMealThumb"
 
