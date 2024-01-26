@@ -10,7 +10,6 @@
 		BCFCA3EA2B61D40600F27F00 /* FetchTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA3E92B61D40600F27F00 /* FetchTestApp.swift */; };
 		BCFCA3EE2B61D40800F27F00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCFCA3ED2B61D40800F27F00 /* Assets.xcassets */; };
 		BCFCA3F12B61D40800F27F00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCFCA3F02B61D40800F27F00 /* Preview Assets.xcassets */; };
-		BCFCA3FB2B61D40900F27F00 /* FetchTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA3FA2B61D40900F27F00 /* FetchTestTests.swift */; };
 		BCFCA4052B61D40900F27F00 /* FetchTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA4042B61D40900F27F00 /* FetchTestUITests.swift */; };
 		BCFCA4072B61D40900F27F00 /* FetchTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA4062B61D40900F27F00 /* FetchTestUITestsLaunchTests.swift */; };
 		BCFCA4162B61E31600F27F00 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA4152B61E31600F27F00 /* CategoryView.swift */; };
@@ -25,6 +24,10 @@
 		BCFCA42D2B62FE5B00F27F00 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA42C2B62FE5B00F27F00 /* URLImage.swift */; };
 		BCFCA42F2B63009700F27F00 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA42E2B63009700F27F00 /* NetworkError.swift */; };
 		BCFCA4312B64061400F27F00 /* MockMealsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA4302B64061400F27F00 /* MockMealsService.swift */; };
+		BCFCA4332B64144600F27F00 /* MealViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA4322B64144600F27F00 /* MealViewModelTests.swift */; };
+		BCFCA4362B64175100F27F00 /* StubFullMeal.json in Resources */ = {isa = PBXBuildFile; fileRef = BCFCA4352B64175100F27F00 /* StubFullMeal.json */; };
+		BCFCA4382B641FB000F27F00 /* StubPartialMeals.json in Resources */ = {isa = PBXBuildFile; fileRef = BCFCA4372B641FB000F27F00 /* StubPartialMeals.json */; };
+		BCFCA43A2B641FF200F27F00 /* CategoryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCA4392B641FF200F27F00 /* CategoryViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +53,6 @@
 		BCFCA3ED2B61D40800F27F00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCFCA3F02B61D40800F27F00 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCFCA3F62B61D40900F27F00 /* FetchTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCFCA3FA2B61D40900F27F00 /* FetchTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTestTests.swift; sourceTree = "<group>"; };
 		BCFCA4002B61D40900F27F00 /* FetchTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCFCA4042B61D40900F27F00 /* FetchTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTestUITests.swift; sourceTree = "<group>"; };
 		BCFCA4062B61D40900F27F00 /* FetchTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -66,6 +68,10 @@
 		BCFCA42C2B62FE5B00F27F00 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		BCFCA42E2B63009700F27F00 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		BCFCA4302B64061400F27F00 /* MockMealsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMealsService.swift; sourceTree = "<group>"; };
+		BCFCA4322B64144600F27F00 /* MealViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModelTests.swift; sourceTree = "<group>"; };
+		BCFCA4352B64175100F27F00 /* StubFullMeal.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StubFullMeal.json; sourceTree = "<group>"; };
+		BCFCA4372B641FB000F27F00 /* StubPartialMeals.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StubPartialMeals.json; sourceTree = "<group>"; };
+		BCFCA4392B641FF200F27F00 /* CategoryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +145,10 @@
 		BCFCA3F92B61D40900F27F00 /* FetchTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				BCFCA3FA2B61D40900F27F00 /* FetchTestTests.swift */,
+				BCFCA4342B6415C100F27F00 /* JSON */,
 				BCFCA4302B64061400F27F00 /* MockMealsService.swift */,
+				BCFCA4322B64144600F27F00 /* MealViewModelTests.swift */,
+				BCFCA4392B641FF200F27F00 /* CategoryViewModelTests.swift */,
 			);
 			path = FetchTestTests;
 			sourceTree = "<group>";
@@ -190,6 +198,15 @@
 				BCFCA42E2B63009700F27F00 /* NetworkError.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		BCFCA4342B6415C100F27F00 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				BCFCA4352B64175100F27F00 /* StubFullMeal.json */,
+				BCFCA4372B641FB000F27F00 /* StubPartialMeals.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +326,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCFCA4382B641FB000F27F00 /* StubPartialMeals.json in Resources */,
+				BCFCA4362B64175100F27F00 /* StubFullMeal.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +365,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCFCA4312B64061400F27F00 /* MockMealsService.swift in Sources */,
-				BCFCA3FB2B61D40900F27F00 /* FetchTestTests.swift in Sources */,
+				BCFCA43A2B641FF200F27F00 /* CategoryViewModelTests.swift in Sources */,
+				BCFCA4332B64144600F27F00 /* MealViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
