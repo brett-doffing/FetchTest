@@ -9,8 +9,10 @@ enum NetworkError: Error {
     case invalidStatusCode(statusCode: Int)
     case failedToDecode(error: Error)
     case unsupportedImage
+}
 
-    var localizedDescription: String {
+extension NetworkError: LocalizedError {
+    var errorDescription: String? {
         switch self {
         case .invalidURL:
             return "Invalid URL"
