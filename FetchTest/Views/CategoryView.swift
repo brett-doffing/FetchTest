@@ -19,12 +19,13 @@ struct CategoryView: View {
             if viewModel.isLoading { ProgressView().scaleEffect(2) }
         }
         .alert("Error", isPresented: $viewModel.showAlert) {
-            Button("ok", role: .cancel, action: {
+            Button("OK", role: .cancel, action: {
                 viewModel.error = nil
             })
         } message: {
-            Text("Apologies, but it looks like something went wrong.")
-            Text(viewModel.error?.localizedDescription ?? "")
+            VStack {
+                Text($viewModel.error.wrappedValue?.localizedDescription ?? "")
+            }
         }
     }
 
